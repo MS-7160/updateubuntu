@@ -1,0 +1,16 @@
+#!/bin/bash
+read -n1 -r -p "Press ant key to update ubuntu..." key
+echo -e "####################"
+echo -e "## Updating lists ##"
+echo -e "####################"
+sudo apt update
+echo -e "######################"
+echo -e "## Upgrading system ##"
+echo -e "######################"
+sudo apt full-upgrade -y
+echo -e "############################"
+echo -e "## Removing unnecessaries ##"
+echo -e "############################"
+sudo apt autoremove -y
+read -n1 -r -p "Update completed, press any key to reboot..." key
+sudo reboot
