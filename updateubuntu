@@ -1,5 +1,8 @@
 #!/bin/bash
-read -n1 -r -p "Press ant key to update ubuntu..." key
+echo "#####################################"
+echo "## Press enter to update ubuntu... ##"
+echo "#####################################"
+read dummy
 echo -e "####################"
 echo -e "## Updating lists ##"
 echo -e "####################"
@@ -12,5 +15,8 @@ echo -e "############################"
 echo -e "## Removing unnecessaries ##"
 echo -e "############################"
 sudo apt autoremove -y
-read -n1 -r -p "Update completed, press any key to reboot..." key
+echo "################################################"
+echo "## Update completed, press enter to reboot... ##"
+echo "################################################"
+read dummy
 sudo reboot
