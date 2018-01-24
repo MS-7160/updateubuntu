@@ -1,4 +1,11 @@
 #!/bin/bash
+echo "###############################################"
+echo "## Get root access, please enter password... ##"
+echo "###############################################"
+if [[ $EUID -ne 0 ]];
+then
+exec sudo /bin/bash "$0" "$@"
+fi
 echo "#####################################"
 echo "## Press enter to update ubuntu... ##"
 echo "#####################################"
@@ -6,17 +13,17 @@ read dummy
 echo -e "####################"
 echo -e "## Updating lists ##"
 echo -e "####################"
-sudo apt update
+apt update
 echo -e "######################"
 echo -e "## Upgrading system ##"
 echo -e "######################"
-sudo apt full-upgrade -y
+apt full-upgrade -y
 echo -e "############################"
 echo -e "## Removing unnecessaries ##"
 echo -e "############################"
-sudo apt autoremove -y
+apt autoremove -y
 echo "################################################"
 echo "## Update completed, press enter to reboot... ##"
 echo "################################################"
 read dummy
-sudo reboot
+reboot
