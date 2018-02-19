@@ -3,9 +3,9 @@ if [[ $EUID -ne 0 ]];
 then
 exec sudo /bin/bash "$0" "$@"
 fi
-echo "#####################################"
-echo "## Press enter to update ubuntu... ##"
-echo "#####################################"
+echo -e "#####################################"
+echo -e "## Press enter to update ubuntu... ##"
+echo -e "#####################################"
 read dummy
 echo -e "####################"
 echo -e "## Updating lists ##"
@@ -19,8 +19,8 @@ echo -e "############################"
 echo -e "## Removing unnecessaries ##"
 echo -e "############################"
 apt autoremove -y
-echo "################################################"
-echo "## Update completed, press enter to reboot... ##"
-echo "################################################"
+echo -e "################################################"
+echo -e "## Update completed, press enter to reboot... ##"
+echo -e "################################################"
 read dummy
 reboot
