@@ -18,7 +18,7 @@ apt full-upgrade -y
 echo -e "############################"
 echo -e "## Removing unnecessaries ##"
 echo -e "############################"
-apt autoremove -y
+apt autopurge -y
 echo -e "################################################"
 echo -e "## Update completed, press enter to reboot... ##"
 echo -e "################################################"
